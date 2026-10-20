@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>北歐極光行程 Nordic Aurora Trip</title>
+<style>
+:root{--bg:#f3f6f7;--tx:#14222b;--mu:#5a6b75;--ac:#0f7c8a;--ln:#c9d6dc;--st:#dff3e8;--sb:#3aa876;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1519;--tx:#e6eef0;--mu:#93a6ae;--ac:#5fc7d4;--ln:#29404a;--st:#12302a;--sb:#3aa876;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1519;--tx:#e6eef0;--mu:#93a6ae;--ac:#5fc7d4;--ln:#29404a;--st:#12302a;--sb:#3aa876;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Noto Sans TC","PingFang TC",sans-serif}
+.w{max-width:680px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:26px;line-height:1.25;margin:0 0 4px}
+h3{font-size:16px;margin:20px 0 6px;color:var(--ac)}
+.sub{color:var(--mu);margin:0 0 14px;font-size:14px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+button{font:inherit;font-size:14px;color:var(--tx);background:transparent;border:1px solid var(--ln);border-radius:8px;padding:6px 12px;cursor:pointer}
+button[aria-pressed="true"]{background:var(--ac);border-color:var(--ac);color:var(--bg)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+ul{margin:0;padding-left:20px;font-size:15px}
+li{margin:3px 0}
+.day{margin-top:26px}
+.day h2{font-size:19px;margin:0 0 10px}
+.day h2 small{color:var(--ac);font-weight:600;margin-right:8px}
+.tl{border-left:2px solid var(--ln);margin-left:6px;padding-left:18px}
+.s{position:relative;padding:0 0 16px}
+.s::before{content:"";position:absolute;left:-25px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--ac)}
+.t{font-weight:700;color:var(--ac);font-size:14px}
+.p{font-weight:600}
+.n{color:var(--mu);font-size:14px}
+.m{text-decoration:none;margin-left:6px;font-size:14px}
+.stay{background:var(--st);border-left:4px solid var(--sb);border-radius:8px;padding:10px 12px;font-size:15px}
+.stay a{color:var(--ac)}
+.ed [data-k]{outline:1px dashed var(--ln);outline-offset:2px;border-radius:3px}
+.foot{margin-top:32px;color:var(--mu);font-size:13px}
+</style></head><body><div class="w" id="app"></div>
+<script>
+var N={
+no:{t:["挪威｜特羅姆瑟","Norway | Tromsø"],q:"Tromsø city centre",
+sub:["兩人、曼城出發、11 月初｜極光團每晚出發，市區可步行","Two people, from Manchester, early November | aurora tours every night, walkable centre"],
+info:[
+["日照與季節","Daylight and season",[
+["11 月初日出約 8:30、日落約 14:30，月底只剩約 2 小時","Early November: sunrise about 8:30, sunset about 14:30; about 2 hours by month end"],
+["11 月是賞鯨季開始，也是狗拉雪橇季開始（看積雪）","November starts whale-watching and dog-sledding season (snow permitting)"]]],
+["預約提醒","Booking tips",[
+["極光團至少訂兩晚，確認沒看到能否改期","Book at least two aurora nights and check whether you can rebook"],
+["兩人住市中心、不用租車；確認活動是否含旅館接送","Stay in the centre with no car; check whether tours include hotel pickup"],
+["確認護照效期與申根入境規定","Check passport validity and Schengen entry rules"]]]],
+days:[
+{t:["抵達與第一次極光","Arrive and a first aurora try"],s:[
+["抵達後","入住市中心旅館","Check in at a hotel in the centre","晚上才落地的話，白天活動往後挪一天","If you land in the evening, shift daytime plans back a day","Tromsø city centre"],
+["17:00","市區散步與晚餐","Town walk and dinner","","","Tromsø harbour"],
+["19:00","極光追逐團（第一晚）","Aurora chase (night 1)","小團巴士，導遊依雲層即時換點","Small bus; the guide switches spots with the clouds","Tromsø city centre"]]},
+{t:["賞鯨與極光","Whales and aurora"],s:[
+["10:00","賞鯨行程","Whale-watching trip","11 月初剛開始賞鯨季，挑日照最亮的時段","Season just starting; pick the brightest hours","Tromsø harbour whale watching"],
+["15:00","極光大教堂","Arctic Cathedral","傍晚藍調時刻最美","Best in the blue hour at dusk","Arctic Cathedral Tromsø"],
+["19:00","第二次極光（依預報）","Second aurora try (by forecast)","也可改極光船上晚餐或休息","Or an aurora dinner cruise, or rest","Tromsø city centre"]]},
+{t:["狗拉雪橇與最後一晚","Dog sledding and a last night"],s:[
+["09:30","狗拉雪橇","Dog sledding","視積雪狀況","Depends on snow","Dog sledding Tromsø"],
+["13:00","纜車上山看市景","Cable car up for city views","視天氣，再逛市區","Weather permitting, then the centre","Fjellheisen Tromsø"],
+["19:00","最後一晚極光","Last aurora try","預留彈性","Keep it flexible","Tromsø city centre"]]}]},
+fi:{t:["芬蘭｜羅瓦涅米","Finland | Rovaniemi"],q:"Rovaniemi",
+sub:["兩人、曼城出發、11 月初｜有直飛，機場離市中心約 10 分鐘","Two people, from Manchester, early November | direct flights, airport 10 min from the centre"],
+info:[
+["日照與雪況","Daylight and snow",[
+["日照：11/1 約 7 小時 25 分、11/15 約 5 小時 40 分、月底約 3 小時 50 分","Daylight: about 7 h 25 min on 1 Nov, 5 h 40 min on 15 Nov, 3 h 50 min at month end"],
+["第一場雪通常在 11 月，但 11 月初不保證有雪，有些年無雪又多霧；市中心以外建議帶防滑冰爪","First snow is usually in November but not guaranteed early on; some years are snow-free and foggy; bring ice grips beyond the centre"],
+["聖誕老人村全年開放、入場免費，11 月比 12 月人少","Santa Claus Village is free and open all year, quieter in November than December"]]],
+["預約與費用參考","Booking and cost guide",[
+["約略價：哈士奇雪橇約 €95 起、導覽極光團約 €150、Arktikum 約 €30（旅遊部落格資料，以業者為準）","Rough prices: husky safari from about €95, guided aurora hunt about €150, Arktikum about €30 (from a travel blog; check with operators)"],
+["極光團至少訂兩晚；雪況不夠時部分雪上活動可能無法進行","Book at least two aurora nights; some snow activities may not run without enough snow"]]]],
+days:[
+{t:["抵達、北極圈與第一次極光","Arrive, the Arctic Circle and a first aurora try"],s:[
+["抵達後","羅瓦涅米機場、入住","Rovaniemi Airport and check in","","","Rovaniemi Airport"],
+["下午","聖誕老人村與北極圈線","Santa Claus Village and the Arctic Circle line","入場免費，聖誕老人辦公室另收費","Entry is free; Santa's Office costs extra","Santa Claus Village Rovaniemi"],
+["晚上","極光團","Aurora tour","小團巴士或雪地摩托車","Small bus or snowmobile safari","Rovaniemi"]]},
+{t:["雪橇體驗與博物館","Sleigh experience and a museum"],s:[
+["上午","哈士奇或馴鹿雪橇體驗","Husky or reindeer sleigh experience","要看雪況","Depends on snow","Husky park Rovaniemi"],
+["下午","Arktikum 博物館","Arktikum museum","認識北極與拉普蘭","An introduction to the Arctic and Lapland","Arktikum Rovaniemi"],
+["晚上","第二次極光","Second aurora try","","","Rovaniemi"]]},
+{t:["馴鹿牧場與最後一晚","Reindeer farm and a last night"],s:[
+["白天","馴鹿牧場半日","Half day at a reindeer farm","或市區散步與咖啡廳","Or a walk and cafes in town","Reindeer farm Rovaniemi"],
+["白天","市區散步","Walk around town","","","Rovaniemi city centre"],
+["晚上","最後一次極光","Last aurora try","預留彈性","Keep it flexible","Rovaniemi"]]}]}};
+var TM={"抵達後":"After landing","上午":"Morning","下午":"Afternoon","晚上":"Evening","白天":"Daytime"};
+var U={zh:{day:"第 {n} 天",stay:"住宿：",map:"地圖",foot:"編輯只會存在你自己的瀏覽器，不會同步給其他人。班次、價格與雪況出發前請再確認。",ed:"編輯",done:"完成",rs:"還原",find:"找 Airbnb",bk:"找 Booking",hot:"市中心旅館"},
+en:{day:"Day {n}",stay:"Stay: ",map:"Map",foot:"Edits are saved only in your own browser and are not shared. Please recheck flights, prices and snow conditions before you go.",ed:"Edit",done:"Done",rs:"Reset",find:"Find Airbnb",bk:"Find on Booking.com",hot:"Hotel in the centre"}};
+var lang=(navigator.language||"").slice(0,2)=="en"?"en":"zh",c="no",edit=false,S={};
+try{S=JSON.parse(localStorage.getItem("nordic")||"{}")}catch(e){}
+function esc(x){return String(x).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function g(k,d){return esc(S[lang]&&S[lang][k]!=null?S[lang][k]:d)}
+function sp(k,d,cl){return '<span class="'+cl+'" data-k="'+k+'"'+(edit?' contenteditable="true"':'')+'>'+g(k,d)+'</span>'}
+function mp(q){return '<a class="m" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q)+'">📍 '+U[lang].map+'</a>'}
+function render(){var i=lang=="en"?1:0,u=U[lang],C=N[c],h='';
+document.documentElement.lang=lang=="en"?"en":"zh-Hant";document.body.className=edit?"ed":"";
+h+='<h1>'+C.t[i]+'</h1><p class="sub">'+C.sub[i]+'</p><div class="bar"><button data-a="c:no" aria-pressed="'+(c=="no")+'">'+(i?"Norway":"挪威")+'</button><button data-a="c:fi" aria-pressed="'+(c=="fi")+'">'+(i?"Finland":"芬蘭")+'</button><button data-a="zh" aria-pressed="'+(lang=="zh")+'">中文</button><button data-a="en" aria-pressed="'+(lang=="en")+'">English</button><button data-a="ed" aria-pressed="'+edit+'">'+(edit?u.done:u.ed)+'</button>'+(edit?'<button data-a="rs">'+u.rs+'</button>':'')+'</div>';
+C.info.forEach(function(b,x){h+='<h3>'+b[i]+'</h3><ul>';b[2].forEach(function(l,y){h+='<li>'+sp(c+"i"+x+"_"+y,l[i],"")+'</li>'});h+='</ul>'});
+C.days.forEach(function(d,x){var k0=c+"d"+x;h+='<section class="day"><h2><small>'+u.day.replace("{n}",x+1)+'</small>'+sp(k0+"t",d.t[i],"")+'</h2><div class="tl">';
+d.s.forEach(function(s,y){var k=k0+"s"+y;h+='<div class="s"><div class="t">'+sp(k+"h",(i&&TM[s[0]])||s[0],"")+'</div><div>'+sp(k+"p",s[1+i],"p")+mp(s[5])+'</div>'+(s[3+i]||S[lang]&&S[lang][k+"n"]?'<div>'+sp(k+"n",s[3+i],"n")+'</div>':'')+'</div>'});
+h+='</div></section>'});
+h+='<div class="stay">'+u.stay+sp(c+"stay",u.hot,"")+' · '+mp(C.q)+' · <a target="_blank" rel="noopener" href="https://www.airbnb.com/s/'+encodeURIComponent(C.q)+'/homes">'+u.find+'</a> · <a target="_blank" rel="noopener" href="https://www.booking.com/searchresults.html?ss='+encodeURIComponent(C.q)+'">'+u.bk+'</a></div>';
+h+='<p class="foot">'+u.foot+'</p>';document.getElementById("app").innerHTML=h}
+document.addEventListener("click",function(e){var a=e.target.getAttribute&&e.target.getAttribute("data-a");if(!a)return;
+if(a=="zh"||a=="en")lang=a;else if(a.indexOf("c:")==0)c=a.slice(2);else if(a=="ed")edit=!edit;else if(a=="rs"){S[lang]={};try{localStorage.setItem("nordic",JSON.stringify(S))}catch(x){}}
+render()});
+document.addEventListener("focusout",function(e){var k=e.target.getAttribute&&e.target.getAttribute("data-k");if(!k||!edit)return;
+S[lang]=S[lang]||{};S[lang][k]=e.target.textContent.trim();try{localStorage.setItem("nordic",JSON.stringify(S))}catch(x){}});
+render();
+</script></body></html>
