@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>北歐極光行程 Nordic Aurora Trip</title>
+<style>
+:root{--bg:#f3f6f7;--tx:#14222b;--mu:#5a6b75;--ac:#0f7c8a;--ln:#c9d6dc;--st:#dff3e8;--sb:#3aa876;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1519;--tx:#e6eef0;--mu:#93a6ae;--ac:#5fc7d4;--ln:#29404a;--st:#12302a;--sb:#3aa876;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1519;--tx:#e6eef0;--mu:#93a6ae;--ac:#5fc7d4;--ln:#29404a;--st:#12302a;--sb:#3aa876;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Noto Sans TC","PingFang TC",sans-serif}
+.w{max-width:680px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:26px;line-height:1.25;margin:0 0 4px}
+h3{font-size:16px;margin:20px 0 6px;color:var(--ac)}
+.sub{color:var(--mu);margin:0 0 14px;font-size:14px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+button{font:inherit;font-size:14px;color:var(--tx);background:transparent;border:1px solid var(--ln);border-radius:8px;padding:6px 12px;cursor:pointer}
+button[aria-pressed="true"]{background:var(--ac);border-color:var(--ac);color:var(--bg)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+ul{margin:0;padding-left:20px;font-size:15px}
+li{margin:3px 0}
+.day{margin-top:26px}
+.day h2{font-size:19px;margin:0 0 10px}
+.day h2 small{color:var(--ac);font-weight:600;margin-right:8px}
+.tl{border-left:2px solid var(--ln);margin-left:6px;padding-left:18px}
+.s{position:relative;padding:0 0 16px}
+.s::before{content:"";position:absolute;left:-25px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--ac)}
+.t{font-weight:700;color:var(--ac);font-size:14px}
+.p{font-weight:600}
+.n{color:var(--mu);font-size:14px}
+.m{text-decoration:none;margin-left:6px;font-size:14px}
+.stay{background:var(--st);border-left:4px solid var(--sb);border-radius:8px;padding:10px 12px;font-size:15px}
+.stay a{color:var(--ac)}
+.ed [data-k]{outline:1px dashed var(--ln);outline-offset:2px;border-radius:3px}
+.foot{margin-top:32px;color:var(--mu);font-size:13px}
+</style></head><body><div class="w" id="app"></div>
+<script>
+var N={
+no:{t:["挪威｜特羅姆瑟","Norway | Tromsø"],q:"Tromsdalen Tromsø",st:["Airbnb「Feel like home !」Tromsdalen","Airbnb \"Feel like home !\", Tromsdalen"],sl:"https://www.airbnb.com.au/rooms/1406292528584849573?adults=2&check_in=2026-11-04&check_out=2026-11-07&guests=2",
+sub:["兩人、曼城出發、11/4（三）至 11/7（六）｜兩個晚上看極光，白天賞鯨與纜車","Two people, from Manchester, Wed 4 to Sat 7 Nov | two aurora nights, whales and cable car by day"],
+info:[
+["航班與日照","Flights and daylight",[
+["去程 11/4 19:15 起飛、23:25 抵達；回程 11/7 13:00 起飛、15:25 抵達曼城","Out Nov 4 19:15, land 23:25; back Nov 7 13:00, land Manchester 15:25"],
+["11/4 太晚落地，極光團只能排 11/5 和 11/6 兩晚","You land too late on Nov 4, so aurora tours are Nov 5 and Nov 6 only"],
+["11 月初日出約 8:30、日落約 14:30，白天活動集中在中午前後","Early November: sunrise about 8:30, sunset about 14:30; keep daytime plans around midday"]]],
+["預約提醒","Booking tips",[
+["兩晚極光團各訂一團，選可免費取消的，並問清楚沒看到能否改期","Book one aurora tour per night with free cancellation, and ask about rebooking if you see nothing"],
+["賞鯨選特羅姆瑟港口出發、16:00 前回來的團","For whales, pick a trip from Tromsø harbour that is back before 16:00"],
+["住處離市中心約 2 公里，確認極光團能否到住處接送","The flat is about 2 km from the centre; ask whether tours pick up there"],
+["深夜入住請先通知房東，確認 key safe 密碼","Tell the host about your late arrival and confirm the key safe code"],
+["確認護照效期與申根入境規定","Check passport validity and Schengen entry rules"]]]],
+lk:[
+["訂位連結","Booking links",[
+["極光團：Musement 小團追光（有保證）","Aurora: Musement small group (with guarantee)","https://www.musement.com/us/tromso/aurora-chase-small-group-with-guarantee-494829/"],
+["極光團：Musement 小巴追光","Aurora: Musement minibus chase","https://www.musement.com/uk/tromso/northern-lights-chase-by-minibus-from-tromso-138100/"],
+["極光團：Visit Norway 攝影師帶隊","Aurora: Visit Norway photographer-led chase","https://www.visitnorway.com/listings/northern-lights-chase-with-professional-photographers/273494/"],
+["極光團：Civitatis","Aurora: Civitatis","https://www.civitatis.com/en/tromso/northern-lights-tour/?aid=105307"],
+["賞鯨：Visit Norway","Whales: Visit Norway","https://www.visitnorway.com/listings//personal-whale-safari-from-tromso/280531"],
+["賞鯨：Manawa","Whales: Manawa","https://www.manawa.com/en-GB/activity/norway/tromso/whale-watching/whale-watching-tour-from-tromso/24144"],
+["賞鯨：Trip.com","Whales: Trip.com","https://au.trip.com/things-to-do/detail/98783772"],
+["纜車：Fjellheisen 官方票務","Cable car: Fjellheisen official tickets","https://www.fjellheisen.no/aktiviteter/all-cable-car-tickets"]]],
+["參考資料","References",[
+["極光團比較文章","Aurora tour comparison","https://guidetolofoten.com/northern-lights-tours-tromso/"],
+["賞鯨團比較文章","Whale-watching comparison","https://www.meganstarr.com/?p=29756"],
+["雲量預報 yr.no","Cloud forecast: yr.no","https://www.yr.no"],
+["NOAA 極光預報","NOAA aurora forecast","https://www.swpc.noaa.gov/products/aurora-30-minute-forecast"],
+["Norwegian 曼城到特羅姆瑟時刻表","Norwegian Manchester to Tromsø timetable","https://info.flightmapper.net/route/Norwegian_DY_MAN_TOS"],
+["Norwegian 特羅姆瑟到曼城時刻表","Norwegian Tromsø to Manchester timetable","https://info.flightmapper.net/route/Norwegian_DY_TOS_MAN"]]]],
+days:[
+{t:["11/4 抵達","Nov 4 · Arrival"],s:[
+["19:15","曼城機場出發","Fly from Manchester","Norwegian 直飛，約 3 小時 10 分","Norwegian direct, about 3h10","Manchester Airport"],
+["23:25","抵達特羅姆瑟機場","Land at Tromsø Airport","領行李後叫計程車，約 10 到 15 分鐘到住處","Take a taxi after baggage; about 10 to 15 minutes to the flat","Tromsø Airport"],
+["00:30","自助入住","Self check-in","用 key safe；先請房東確認深夜入住與密碼","Key safe; ask the host in advance about late arrival and the code","Tromsdalen Tromsø"]]},
+{t:["11/5 賞鯨與第一晚極光","Nov 5 · Whales and first aurora night"],s:[
+["08:30","早餐與出發準備","Breakfast and getting ready","天剛亮，穿好保暖衣物","Sunrise about now; dress warmly","Tromsdalen Tromsø"],
+["10:00","賞鯨團","Whale-watching trip","選特羅姆瑟港口出發、16:00 前回來的團","Pick a trip from Tromsø harbour that is back before 16:00","Tromsø harbour whale watching"],
+["下午","回住處休息","Rest at the flat","晚上要熬夜，先補眠","Nap before the late night","Tromsdalen Tromsø"],
+["18:00","第一晚極光團","Aurora chase (night 1)","小團優先，約 5 到 9 小時，凌晨回來","Prefer a small group; 5 to 9 hours, back after midnight","Tromsø city centre"]]},
+{t:["11/6 北極大教堂、纜車與第二晚極光","Nov 6 · Cathedral, cable car and second aurora night"],s:[
+["上午","睡到自然醒、早午餐","Sleep in and brunch","昨晚很晚回來，今天輕鬆排","Late night yesterday; keep today easy","Tromsdalen Tromsø"],
+["12:00","北極大教堂","Arctic Cathedral","住處走路可到","Walkable from the flat","Arctic Cathedral Tromsø"],
+["13:00","Fjellheisen 纜車","Fjellheisen cable car","趁白天有光看市區與峽灣；營業時間請先查官網","Daylight views over the city and fjord; check opening hours first","Fjellheisen Tromsø"],
+["18:00","第二晚極光團","Aurora chase (night 2)","依第一晚天氣換業者或型態","Switch operator or style based on night 1","Tromsø city centre"]]},
+{t:["11/7 返程","Nov 7 · Fly home"],s:[
+["上午","睡到 9 點多、整理行李","Sleep in and pack","不排任何活動","No plans","Tromsdalen Tromsø"],
+["10:15","退房、叫車去機場","Check out, taxi to the airport","先跟房東確認退房時間","Confirm check-out time with the host","Tromsø Airport"],
+["11:00","抵達機場","At the airport","起飛前 2 小時","Two hours before departure","Tromsø Airport"],
+["13:00","飛回曼城","Fly to Manchester","15:25 抵達","Arrive 15:25","Tromsø Airport"]]}]}
+};
+var TM={"抵達後":"After landing","上午":"Morning","下午":"Afternoon","晚上":"Evening","白天":"Daytime"};
+var U={zh:{day:"第 {n} 天",stay:"住宿：",map:"地圖",foot:"編輯只會存在你自己的瀏覽器，不會同步給其他人。班次、價格與雪況出發前請再確認。",ed:"編輯",done:"完成",rs:"還原",find:"找 Airbnb",bk:"找 Booking",hot:"市中心旅館"},
+en:{day:"Day {n}",stay:"Stay: ",map:"Map",foot:"Edits are saved only in your own browser and are not shared. Please recheck flights, prices and snow conditions before you go.",ed:"Edit",done:"Done",rs:"Reset",find:"Find Airbnb",bk:"Find on Booking.com",hot:"Hotel in the centre"}};
+var lang=(navigator.language||"").slice(0,2)=="en"?"en":"zh",c="no",edit=false,S={};
+try{S=JSON.parse(localStorage.getItem("nordic")||"{}")}catch(e){}
+function esc(x){return String(x).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function g(k,d){return esc(S[lang]&&S[lang][k]!=null?S[lang][k]:d)}
+function sp(k,d,cl){return '<span class="'+cl+'" data-k="'+k+'"'+(edit?' contenteditable="true"':'')+'>'+g(k,d)+'</span>'}
+function mp(q){return '<a class="m" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q)+'">📍 '+U[lang].map+'</a>'}
+function render(){var i=lang=="en"?1:0,u=U[lang],C=N[c],h='';
+document.documentElement.lang=lang=="en"?"en":"zh-Hant";document.body.className=edit?"ed":"";
+h+='<h1>'+C.t[i]+'</h1><p class="sub">'+C.sub[i]+'</p><div class="bar"><button data-a="zh" aria-pressed="'+(lang=="zh")+'">中文</button><button data-a="en" aria-pressed="'+(lang=="en")+'">English</button><button data-a="ed" aria-pressed="'+edit+'">'+(edit?u.done:u.ed)+'</button>'+(edit?'<button data-a="rs">'+u.rs+'</button>':'')+'</div>';
+C.info.forEach(function(b,x){h+='<h3>'+b[i]+'</h3><ul>';b[2].forEach(function(l,y){h+='<li>'+sp(c+"i"+x+"_"+y,l[i],"")+'</li>'});h+='</ul>'});
+C.days.forEach(function(d,x){var k0=c+"d"+x;h+='<section class="day"><h2><small>'+u.day.replace("{n}",x+1)+'</small>'+sp(k0+"t",d.t[i],"")+'</h2><div class="tl">';
+d.s.forEach(function(s,y){var k=k0+"s"+y;h+='<div class="s"><div class="t">'+sp(k+"h",(i&&TM[s[0]])||s[0],"")+'</div><div>'+sp(k+"p",s[1+i],"p")+mp(s[5])+'</div>'+(s[3+i]||S[lang]&&S[lang][k+"n"]?'<div>'+sp(k+"n",s[3+i],"n")+'</div>':'')+'</div>'});
+h+='</div></section>'});
+(C.lk||[]).forEach(function(b){h+='<h3>'+b[i]+'</h3><ul>';b[2].forEach(function(l){h+='<li><a target="_blank" rel="noopener" href="'+esc(l[2])+'">'+esc(l[i])+'</a></li>'});h+='</ul>'});
+h+='<div class="stay">'+u.stay+sp(c+"stay",C.st?C.st[i]:u.hot,"")+(C.sl?' · <a target="_blank" rel="noopener" href="'+C.sl+'">Airbnb</a>':'')+' · '+mp(C.q)+' · <a target="_blank" rel="noopener" href="https://www.airbnb.com/s/'+encodeURIComponent(C.q)+'/homes">'+u.find+'</a> · <a target="_blank" rel="noopener" href="https://www.booking.com/searchresults.html?ss='+encodeURIComponent(C.q)+'">'+u.bk+'</a></div>';
+h+='<p class="foot">'+u.foot+'</p>';document.getElementById("app").innerHTML=h}
+document.addEventListener("click",function(e){var a=e.target.getAttribute&&e.target.getAttribute("data-a");if(!a)return;
+if(a=="zh"||a=="en")lang=a;else if(a.indexOf("c:")==0)c=a.slice(2);else if(a=="ed")edit=!edit;else if(a=="rs"){S[lang]={};try{localStorage.setItem("nordic",JSON.stringify(S))}catch(x){}}
+render()});
+document.addEventListener("focusout",function(e){var k=e.target.getAttribute&&e.target.getAttribute("data-k");if(!k||!edit)return;
+S[lang]=S[lang]||{};S[lang][k]=e.target.textContent.trim();try{localStorage.setItem("nordic",JSON.stringify(S))}catch(x){}});
+render();
+</script></body></html>
